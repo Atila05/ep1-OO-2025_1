@@ -9,9 +9,9 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Dados do Aluno
 
-- **Nome completo:** [Preencher aqui]
-- **Matrícula:** [Preencher aqui]
-- **Curso:** [Preencher aqui]
+- **Nome completo:** Átila Sobral de Oliveira
+- **Matrícula:** 232014389
+- **Curso:** Engenharia de Software
 - **Turma:** [Preencher aqui]
 
 ---
@@ -73,4 +73,4 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Contato
 
-- [Opcional: E-mail pessoal do aluno.]
+- E-mail: assobraliveira@gmail.com
