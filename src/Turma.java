@@ -1,26 +1,55 @@
-public class Turma extends Disciplina {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Turma{
+    private Disciplina disciplina;
     private String nomeTurma;
     private String professor;
     private String sala;
     private String horario;
-    private String capacidade;
+    private int capacidade;
+    private List<Alunos> alunosMatriculados;
+    private List<Nota> notas;
+
+    // Métodos
+
+    public void adicionarAluno(Alunos aluno){
+        alunosMatriculados.add(aluno);
+        this.capacidade -= 1;
+    }
+
+    public void adicionarNota(Nota nota){
+        notas.add(nota);
+    }
 
     // Métodos especiais
 
     public Turma(){
+        this.disciplina = null;
         this.nomeTurma = null;
         this.professor = null;
         this.sala = null;
         this.horario = null;
-        this.capacidade = null;
+        this.capacidade = 0;
+        this.alunosMatriculados = new ArrayList<>();
     }
 
-    public Turma(String nomeTurma, String professor, String sala, String horario, String capacidade){
+    public Turma(Disciplina disciplina, String nomeTurma, String professor, String sala, String horario, int capacidade){
+        this.disciplina = disciplina;
         this.nomeTurma = nomeTurma;
         this.professor = professor;
         this.sala = sala;
         this.horario = horario;
         this.capacidade = capacidade;
+        this.alunosMatriculados = new ArrayList<>();
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 
     public String getNomeTurma() {
@@ -55,11 +84,11 @@ public class Turma extends Disciplina {
         this.horario = horario;
     }
 
-    public String getCapacidade() {
+    public int getCapacidade() {
         return capacidade;
     }
 
-    public void setCapacidade(String capacidade) {
+    public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
     }
 
