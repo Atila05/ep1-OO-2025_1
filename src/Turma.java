@@ -8,6 +8,8 @@ public class Turma{
     private String sala;
     private String horario;
     private int capacidade;
+    private char formaAvaliacao;
+    private List<Turma> totalTurmas = new ArrayList<>();
     private List<Alunos> alunosMatriculados;
     private List<Nota> notas;
 
@@ -24,24 +26,18 @@ public class Turma{
 
     // Métodos especiais
 
-    public Turma(){
-        this.disciplina = null;
-        this.nomeTurma = null;
-        this.professor = null;
-        this.sala = null;
-        this.horario = null;
-        this.capacidade = 0;
-        this.alunosMatriculados = new ArrayList<>();
-    }
 
-    public Turma(Disciplina disciplina, String nomeTurma, String professor, String sala, String horario, int capacidade){
+    public Turma(Disciplina disciplina, String nomeTurma, String professor, String sala, String horario, int capacidade, char formaAvaliacao){
         this.disciplina = disciplina;
         this.nomeTurma = nomeTurma;
         this.professor = professor;
         this.sala = sala;
         this.horario = horario;
         this.capacidade = capacidade;
+        this.formaAvaliacao = formaAvaliacao;
         this.alunosMatriculados = new ArrayList<>();
+        disciplina.adicionarTurma(this);
+        totalTurmas.add(this);
     }
 
     public Disciplina getDisciplina() {
@@ -90,6 +86,14 @@ public class Turma{
 
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
+    }
+
+    public char getFormaAvaliacao() {
+        return formaAvaliacao;
+    }
+
+    public void setFormaAvaliacao(char formaAvaliacao) {
+        this.formaAvaliacao = formaAvaliacao;
     }
 
 

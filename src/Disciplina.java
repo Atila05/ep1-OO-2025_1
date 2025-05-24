@@ -8,12 +8,26 @@ public class Disciplina {
     private String preRequisitos;
     private String semestre;
     private int totalAulas;
+    private List<Disciplina> totaDisciplinas = new ArrayList<>();
     private List<Turma> turmas = new ArrayList<>();
+    private List<Alunos> alunos = new ArrayList<>();
 
     // Métodos
 
     public void adicionarTurma(Turma turma){
-        turmas.add(turma);
+        this.turmas.add(turma);
+    }
+
+    public void removerTurma(Turma turma){
+        this.turmas.remove(turma);
+    }
+
+    public void adicionarAluno(Alunos aluno){
+        this.alunos.add(aluno);
+    }
+
+    public void removerAluno(Alunos aluno){
+        this.alunos.remove(aluno);
     }
 
 
@@ -21,20 +35,13 @@ public class Disciplina {
 
     // Métodos especiais
 
-    public Disciplina(){
-        this.nomeDisciplina = null;
-        this.codigo = null;
-        this.carga = null;
-        this.preRequisitos = null;
-        this.totalAulas = 0;
-    }
-
     public Disciplina(String nomeDisciplina, String codigo, String carga, String preRequisitos, int totalAulas){
         this.nomeDisciplina = nomeDisciplina;
         this.codigo = codigo;
         this.carga = carga;
         this.preRequisitos = preRequisitos;
         this.totalAulas = totalAulas;
+        totaDisciplinas.add(this);
     }
 
     public String getNomeDisciplina() {

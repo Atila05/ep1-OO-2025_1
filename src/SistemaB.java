@@ -4,7 +4,7 @@ public class SistemaB extends Nota {
     // Métodos
 
     public void calcularNota(){
-        this.notaFinal = (this.getProva1() + this.getProva2() + this.getProva3() + this.getListaexercicios() + this.getSeminario())/5;
+        this.notaFinal = (this.getProva1() + this.getProva2()*2 + this.getProva3()*3 + this.getListaexercicios() + this.getSeminario())/8;
     }
 
 

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Alunos {
@@ -5,6 +6,7 @@ public class Alunos {
     private String matricula;
     private String curso; 
     private int semestre;
+    private List<Alunos> totalAlunos = new ArrayList<>();
     private List<Turma> turmas = new ArrayList<>();
     private List<Nota> notas = new ArrayList<>();
     private List<Frequencia> frequencias = new ArrayList<>();
@@ -18,27 +20,36 @@ public class Alunos {
         turmas.add(turma);
     }
 
+    public void removerTurma(Turma turma){
+        turmas.remove(turma);
+    }
+
     public void adicionarNota(Nota nota){
         notas.add(nota);
+    }
+
+    public void removerNota(Nota nota){
+        notas.remove(nota);
     }
 
     public void adicionarFrequencia(Frequencia frequencia){
         frequencias.add(frequencia);
     }
 
+    public void removerFrequencia(Frequencia frequencia){
+        frequencias.remove(frequencia);
+    }
+
 
     //Metodos especiais
 
-    public Alunos(){
-        this.nome = null;
-        this.matricula = null;
-        this.curso = null;
-    }
 
-    public Alunos(String nome, String matricula, String curso){
+    public Alunos(String nome, String matricula, String curso, int semestre){
         this.nome = nome;
         this.matricula = matricula;
         this.curso = curso;
+        this.semestre = semestre;
+        totalAlunos.add(this);
     }
 
     public String getNome(){
@@ -71,6 +82,14 @@ public class Alunos {
 
     public void setSemestre(int semestre) {
         this.semestre = semestre;
+    }
+
+    public Avaliacao getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(Avaliacao situacao) {
+        this.situacao = situacao;
     }
 
 

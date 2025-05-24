@@ -10,14 +10,10 @@ public class Frequencia {
 
     // Métodos especiais
 
-    public Frequencia(){
-        this.aluno = null;
-        this.frequencia = 0;
-    }
-
-    public Frequencia(Alunos aluno, int frequencia){
+    public Frequencia(Alunos aluno){
         this.aluno = aluno;
-        this.frequencia = frequencia;
+        this.frequencia = 0;
+        aluno.adicionarFrequencia(this);
     }
 
     public Alunos getAluno() {
