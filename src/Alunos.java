@@ -3,11 +3,10 @@ import java.util.List;
 
 public class Alunos {
     private String nome;
-    private String matricula;
+    private int matricula;
     private String curso; 
     private int semestre;
-    private List<Alunos> totalAlunos = new ArrayList<>();
-    private List<Turma> turmas = new ArrayList<>();
+    protected List<Turma> turmas = new ArrayList<>();
     private List<Nota> notas = new ArrayList<>();
     private List<Frequencia> frequencias = new ArrayList<>();
 
@@ -44,12 +43,11 @@ public class Alunos {
     //Metodos especiais
 
 
-    public Alunos(String nome, String matricula, String curso, int semestre){
+    public Alunos(String nome, int matricula, String curso, int semestre){
         this.nome = nome;
         this.matricula = matricula;
         this.curso = curso;
         this.semestre = semestre;
-        totalAlunos.add(this);
     }
 
     public String getNome(){
@@ -60,11 +58,11 @@ public class Alunos {
         this.nome = nome;
     }
 
-    public String getMatricula(){
+    public int getMatricula(){
         return matricula;
     }
 
-    public void setMatricula(String matricula){
+    public void setMatricula(int matricula){
         this.matricula = matricula;
     }
 
@@ -82,14 +80,6 @@ public class Alunos {
 
     public void setSemestre(int semestre) {
         this.semestre = semestre;
-    }
-
-    public Avaliacao getSituacao() {
-        return situacao;
-    }
-
-    public void setSituacao(Avaliacao situacao) {
-        this.situacao = situacao;
     }
 
 

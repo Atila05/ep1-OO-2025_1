@@ -9,7 +9,6 @@ public class Turma{
     private String horario;
     private int capacidade;
     private char formaAvaliacao;
-    private List<Turma> totalTurmas = new ArrayList<>();
     private List<Alunos> alunosMatriculados;
     private List<Nota> notas;
 
@@ -37,7 +36,6 @@ public class Turma{
         this.formaAvaliacao = formaAvaliacao;
         this.alunosMatriculados = new ArrayList<>();
         disciplina.adicionarTurma(this);
-        totalTurmas.add(this);
     }
 
     public Disciplina getDisciplina() {

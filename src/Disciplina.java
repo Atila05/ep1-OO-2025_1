@@ -8,7 +8,6 @@ public class Disciplina {
     private String preRequisitos;
     private String semestre;
     private int totalAulas;
-    private List<Disciplina> totaDisciplinas = new ArrayList<>();
     private List<Turma> turmas = new ArrayList<>();
     private List<Alunos> alunos = new ArrayList<>();
 
@@ -41,7 +40,7 @@ public class Disciplina {
         this.carga = carga;
         this.preRequisitos = preRequisitos;
         this.totalAulas = totalAulas;
-        totaDisciplinas.add(this);
+        
     }
 
     public String getNomeDisciplina() {
